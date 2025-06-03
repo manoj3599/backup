@@ -1,0 +1,24 @@
+<script>
+    //new code
+    function Person(fullName){
+
+
+        let age = 0;
+            this.fullName = fullName;
+            
+        
+
+        this.setAge= function(newAge){
+            age = newAge;
+        }
+
+        this.getAge = function(){
+            return age;
+        }
+
+    }
+    let akashPerson = new Person("akash");
+    akashPerson.setAge(55);
+    console.log(akashPerson.age);//cannot axcess age directly
+    console.log(akashPerson.getAge());//write a function inside to axcess age
+</script>

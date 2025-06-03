@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="start">StartGame</button>
+
+    <button id="end">EndGame</button>
+<div id="second"></div>
+    <script>
+        let dateStart;
+        let dateEnd;
+        document.querySelector('#start').addEventListener("click",function(){
+            dateStart = new Date()
+        })
+
+        document.querySelector('#end').addEventListener("click",function(){
+            dateEnd = new Date()
+            let Secondsdifference = Math.floor((dateEnd - dateStart)/1000)
+            document.querySelector('#second').innerHTML = Secondsdifference
+        })
+    </script>
+
+</body>
+</html>

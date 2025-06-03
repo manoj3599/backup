@@ -1,0 +1,25 @@
+<script>
+  async function fetchALL() {
+    console.log("I will fetch 3 APIs");
+
+    
+        const results = await Promise.all([
+            fetch("https://mocki.io/v1/1bcbc116-ae9a-47b0-a3fd-cdb49af13c0c"),
+            fetch("https://mocki.io/v1/1bcbc116-ae9a-47b0-a3fd-cdb49af13c0c"),
+            fetch("https://mocki.io/v1/1bcbc116-ae9a-47b0-a3fd-cdb49af13c0c")
+        ]);
+
+       
+
+        console.log("Responses received", results);
+        for(let i=0;i< results.length;i++){
+            const jsonResult = await results[i].json()
+            console.log(jsonResult)
+        }
+    } 
+
+
+fetchALL()
+/* const dataPromises = results.map(response => response.json());
+        const data = await Promise.all(dataPromises);*/
+</script>

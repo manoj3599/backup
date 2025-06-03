@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="todo-input">
+<button id="add-todo" >Add todo</button>
+<ul id="todo-holder">
+ </ul>
+
+ <script>
+    
+    let buttonClick = document.getElementById("add-todo");
+   let arrayList= JSON.parse(localStorage.getItem("list")) ? JSON.parse(localStorage.getItem("list")) : [];
+    buttonClick.addEventListener('click',function(){
+         
+        let element = document.getElementById("todo-input").value;
+        const main = document.getElementById("todo-holder");
+        main.innerHTML +=`<li>${element}</li>`
+        arrayList.push(element);
+        localStorage.setItem("list",JSON.stringify(arrayList));
+    })
+
+    function intialLoad(){
+        
+        const main = document.getElementById("todo-holder");
+        for(let obj of arrayList){
+           main.innerHTML +=`<li>${obj}</li>` 
+        }
+        
+    }
+    intialLoad()
+
+ </script>
+</body>
+</html>
+

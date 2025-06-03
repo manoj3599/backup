@@ -1,0 +1,21 @@
+<script>
+    let Person = {
+        a:4,
+        b:67,
+        calaculateAverage : function () {
+            return this.a + this.b;
+        }
+    }
+
+    let display ={
+        age:67,
+        fullName:"akash"
+        
+    }
+    display.__proto__ = Person//this make all the properties inside the person object axcessible inside display object 
+    console.log(display.calaculateAverage())
+
+    console.log(display.__proto__)
+
+
+</script>

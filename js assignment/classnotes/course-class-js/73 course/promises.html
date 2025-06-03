@@ -1,0 +1,31 @@
+<script>
+    function GpayScan(ammount,callback){
+        return new Promise((resolve) => {
+          setTimeout(function(){
+             console.log("you are paying this ", ammount)
+             resolve(ammount);//this end the function without this it will not end
+        },5000)
+        })
+       } 
+       GpayScan(300).then((result) =>{
+        console.log("GpayScan is sucessfull", result)
+
+       })
+    
+    </script>
+
+    <!--<script>
+        function GpayScan(ammount,callback){
+            return new Promise(function(resolve) {
+              setTimeout(function(){
+                 console.log("you are paying this ", ammount)
+                 resolve(ammount);
+            },5000)
+            })
+           } 
+           GpayScan(300).then(function(result){
+            console.log("GpayScan is sucessfull", result)
+    
+           })
+        
+        </script>-->

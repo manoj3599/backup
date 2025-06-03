@@ -1,0 +1,15 @@
+<script>
+    let promise = new Promise(function(res,rej){
+        //res("Hello world")
+        //or 
+        rej("hello")
+    })
+
+    promise.then(function(){
+        console.log('promise resolved')
+    },function(){
+        console.log("promise rejected")
+    }).finally(function(result){//argument will not take finally 
+        console.log("|finally has been executed",result)
+    })
+</script>

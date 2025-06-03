@@ -1,0 +1,49 @@
+<script>
+    //new code
+    function Person(fullName, age) {
+
+
+
+        this.fullName = fullName;
+        this.age = age;
+
+
+
+        this.setAge = function (newAge) {
+            if (newAge > 0) {//thsi refer to person  as it is  linked through "this" key word to function Person(fullName){
+                this.age = newAge;
+            }
+        }
+
+        this.getAge = function () {
+            return this.age;
+        }
+
+        //private
+
+        const display = function () {
+            console.log(this)//thsi refer to window as it is not linked to function Person(fullName){
+            console.log("display function", this.fullName, this.age)
+        }
+
+        this.getFullDisplay = function () {
+            return display();
+        }
+
+
+    }
+
+
+
+    Person.prototype.calculateAge = function () {
+        return 90 - this.age;
+    }
+    let akashPerson = new Person("akash", 33);
+    akashPerson.setAge(55);
+    //akashPerson.getFullDisplay()//with this it is not able to axcess onst display = function() {
+
+
+    console.log(akashPerson.calculateAge());
+    //console.log(akashPerson.age,akashPerson.fullName);
+    console.log(akashPerson.__proto__)
+</script>

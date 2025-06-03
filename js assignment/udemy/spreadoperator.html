@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+    <script>
+         const restaurnt = {
+        name : 'kamath',
+        location: 'keshwapur walvekar plot hubli ',
+        catagories : ['South Indian', 'North Indian', 'Thai', 'Medetaranian'],
+        starterMenu : ['Dosa', 'Idli', 'vada'],
+        mainMenu:  ['shira', 'uppit', 'milk'],
+    }
+        const arr = [7,8,9];
+        const newArr = [1,2,...arr];
+        console.log(newArr);
+        const newMenu = [...restaurnt.mainMenu, 'karabath'];
+        console.log(newMenu);
+
+
+        //copy array
+        const mainMenuCopy =[...restaurnt.mainMenu]
+        const menu =[...restaurnt.starterMenu, ...restaurnt.mainMenu];
+        console.log(menu);
+
+        //Iteerable : arrays strings ,strings,maps,sets. NOT objects
+        const str = 'Jonas';
+        const letters = [...str, ' ', 'S.'];
+        console.log(letters);
+         
+    </script>
+</body>
+</html>

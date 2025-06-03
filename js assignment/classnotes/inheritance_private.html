@@ -1,0 +1,31 @@
+<script>
+     class Parent  { //extends inherits the features from class GrandParent
+       #private = function() {//adding hash its become private
+            console.log("iam developing a program")
+            
+        } 
+        xyz = function() {
+            console.log("mmc")
+            this.#private()// can be called inside the class 
+        }
+    
+        
+        
+    }
+    class Child extends Parent { //extends inherits the features from class Parent and also from class GrandParent
+        
+        
+            
+     
+       
+        useAi = function() {
+            console.log("iam using ai")
+        }
+    }
+
+    const parent = new Parent()
+   
+
+    const child =new Child() //taken to 1st location
+    child.xyz()// this 1st call xyz function and inside xyz it will call private outside class if we call xyz it will give error 
+</script>

@@ -1,0 +1,36 @@
+<script>
+    function GpayScan(ammount,callback){
+        setTimeout(function(){
+             console.log("you are paying this ", ammount)
+             callback(ammount);
+        },5000)
+       
+    }
+
+    function CheckingMyBalance(ammount,callback) {
+        let balance = 3001
+        setTimeout(function(){
+            if((balance-ammount)>0){
+                console.log("existiong balance is avaliable to proceed ")
+            }else{
+                console.log("insufficient balance")
+            }
+
+            callback(ammount)
+            
+        },2000)
+        
+    }
+    function SendingAmmountToSenderBank(ammount) {
+          setTimeout(function(){
+            console.log("Final ammount",ammount)
+        },2000)
+        
+    }
+
+    GpayScan(3000, function(ammount) {
+    CheckingMyBalance(ammount,(ammount)=>{
+        SendingAmmountToSenderBank(ammount)
+    });
+});
+</script>

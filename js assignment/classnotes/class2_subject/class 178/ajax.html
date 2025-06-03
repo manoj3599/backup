@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="name">What is your name?</h1>
+    <button id="buttonElement">Click</button>
+    <script>
+        const nameNode = document.getElementById('name')
+        const xhttp = new XMLHttpRequest()
+        xhttp.onload = function() {
+            const response = (JSON.parse(this.responseText))
+            nameNode.innerText = response.name//because reponse is a object which has a name 
+
+        }
+        xhttp.open('GET','https://mocki.io/v1/df99035a-089c-4d13-ba50-31df7c9e4eb8')
+        const buts = document.getElementById('buttonElement')
+        buts.addEventListener('click', function(){
+           xhttp.send() 
+        })
+        
+    </script>
+</body>
+</html>

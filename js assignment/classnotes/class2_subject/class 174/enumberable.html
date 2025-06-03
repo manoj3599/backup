@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       class Student {
+        name ="bhavesh"//instance member need to be defined as new Student way
+        static rollNo =2// static members
+        
+    } 
+    for(let key in Student) { //in class FORMAT roll no is enumerable 
+        console.log(key)
+    }
+
+    const s1 = new Student()//enumarable of s1 is name as static propety does not come in instance because name is directyly not availible it needs to be defined as const s1 = new Student()
+    for(let key in s1) {
+        console.log(key)
+    }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Location</th>
+        </tr>
+        <!--<tr>
+            <td>mmc</td>
+            <td>22</td>
+            <td>Banglore</td>
+        </tr>-->
+        
+    </table>
+    <script>
+        let table = document.querySelector('table')
+        let tr = document.createElement('tr')//<tr></tr>
+        let tdOne = document.createElement('td')//<td></td>
+        tdOne.textContent = "akash"//<td>akash</td>
+        let tdTwo = document.createElement('td')
+        tdTwo.textContent = 22;//<td>22</td>
+        let tdThree = document.createElement('td')
+        tdThree.textContent = "Banglore"//<td>Banglore</td>
+
+        tr.appendChild(tdOne)//<tr><td>akash</td></tr>
+        tr.appendChild(tdTwo)//<tr><td>akash</td><td>22</td></tr>
+        tr.appendChild(tdThree)//<tr><td>akash</td><td>22</td><td>Banglore</td></tr>
+
+
+        table.appendChild(tr)
+        /*<table>
+            <tr>
+                <td>akash</td>
+                <td>22</td>
+                <td>Banglore</td>
+            </tr>
+        </table>
+
+        */
+       
+    </script>
+</body>
+</html>

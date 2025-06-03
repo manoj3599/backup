@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#input-workout, #btn-start {
+    margin: 10px;
+    padding: 5px;
+}
+
+#output {
+    margin-top: 20px;
+    font-size: 20px;
+}
+    </style>
+</head>
+<body>
+    <input type="text" id="input-workout" placeholder="Enter workout...">
+    <button id="btn-start">Start Workout</button>
+    <div id="output"></div>
+
+
+
+
+
+
+    <script>
+        let personalTrainer = {
+    name: 'John',
+    workouts: ['Pushups', 'Situps', 'Squats'],
+    startWorkout: function(workout)  {
+        const outputDiv = document.getElementById('output');
+        if(this.workouts.includes(workout)){
+            outputDiv.textContent = `${this.name} is starting ${workout}.`;
+        }else{
+            outputDiv.textContent = `${this.name} doesn't know the ${workout} workout.`;
+        }
+    }
+
+};
+
+document.getElementById('btn-start').addEventListener('click', () => {
+    let workout = document.getElementById('input-workout').value;
+    personalTrainer.startWorkout(workout);
+});
+    </script>
+</body>
+</html>

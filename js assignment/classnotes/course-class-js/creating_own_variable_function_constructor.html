@@ -1,0 +1,30 @@
+<script>
+    //new code
+    function Person(fullName,age){
+            //private variable
+
+            let lastname = "xyz"
+            this.fullName = fullName;
+            this.age = age;
+        
+
+        this.setAge= function(newAge){
+            this.age = newAge;
+        }
+
+        this.getAge = function(){
+            return this.age;
+        }
+//private method
+        const getTotalName = function(){
+            console.log("this is private")
+        }
+
+    }
+    let akashPerson = new Person("akash",33);
+    akashPerson.setAge(55);
+    console.log(akashPerson.getAge());
+    console.log(akashPerson.age,akashPerson.fullName);
+    console.log(akashPerson.getTotalName())//private no axisible
+    console.log(new Person.lastname)
+</script>

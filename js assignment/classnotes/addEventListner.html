@@ -1,0 +1,30 @@
+<html>
+
+<head></head>
+
+<body>
+    <form>
+        <input id="fullName" type="text">
+        <h1 id="demo"></h1>
+    </form>
+    <script>
+        console.log(this)
+
+        const obj = {
+            fullName: "akash",
+            getDetails: function () {
+                console.log(this);
+            }
+        };
+
+        obj.getDetails();
+        let fullNameTag = document.getElementById("fullName");
+        const headerTag = document.getElementById("demo")
+        fullNameTag.addEventListener('keyup', function () {//or keyup or change
+            console.log(this.value);
+            headerTag.textContent = this.value;
+        });
+    </script>
+</body>
+
+</html>

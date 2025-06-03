@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="preview"></div>
+    <div class="quote"></div>
+    <script>
+        const previewNode = document.getElementById("preview");
+        const quoteNode = document.getElementsByClassName("quote")[0];
+
+        window.addEventListener('keypress', function(event){
+            previewNode.innerText += event.key;
+            if(previewNode.innerText === "fortytwo"){
+                fetch("https://api.quotable.io/random")
+                    .then(function(response){
+                        return response.json();
+                    })
+                    .then(function(data){
+                        console.log(data.content);
+                        quoteNode.innerText = data.content;
+                    })
+                    .catch(function(error){
+                        console.error('Error fetching quote:', error);
+                        quoteNode.innerText = "Could not fetch quote.";
+                    });
+            }
+        });
+    </script>
+</body>
+</html>

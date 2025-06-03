@@ -1,0 +1,17 @@
+<script>
+    function delay(time) {
+    return new Promise(function (res) {
+        setTimeout(function () {
+            res()
+         }, time * 1000)
+     })
+ }
+
+async function test() {
+     for (let i = 5; i > 0; i--) {
+        await delay(i)
+        console.log(i)
+    }
+ }
+ test()
+</script>

@@ -1,0 +1,23 @@
+<script>
+    const reqPromise = fetch('https://mocki.io/v1/5f8eac41-0d7e-4b7c-9789-24e8706012b2')
+
+    /*reqPromise.then(function(response){
+        const resPromise = response.json()
+        resPromise.then(function(result){
+            console.log(result)
+        })
+
+    }).catch(function(err){
+        console.log(err)
+    })*/
+
+//methos to prevent the nest 
+//both above and below code are same 
+    reqPromise.then(function(response){
+        return response.json()
+    }).then(function(result){
+        console.log(result)
+    }).catch(function(err){
+        console.log(err)
+    })
+    </script>

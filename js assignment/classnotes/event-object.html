@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--onchange-->
+    <input id="mmm" type="text" onchange="onChangeHandler(event)">
+</body>
+<script>
+    function onChangeHandler(event){
+        console.log(event.target.value);
+        console.log(event.target.id);
+    }
+</script>
+</html>

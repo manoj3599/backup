@@ -1,0 +1,31 @@
+<script>
+    const p1 = fetch("https://api.github.com/gists/public").then(function(result){
+        console.log("1st resolved");
+        return result;
+    });
+
+    const p2 = fetch("https://mocki.io/v1/35fc9021-9a94-404e-9ce2-0c1c7f2d21ae").then(function(result){
+        console.log("2nd resolved");
+        return result.json();
+    });
+
+    const p3 = fetch("https://jsonplaceholder.typicode.com/todos/1").then(function(){
+        console.log("3rd resolved");
+    });
+
+    const p4 = new Promise(function (res, rej){
+        setTimeout(function(){
+            console.log("4th resolved");
+            res("after 3 sec");
+        },3000);
+    });
+
+    const combinedPromise = Promise.all([p1, p2, p3, p4]);
+    combinedPromise.then(function(result){
+        console.log("all requests resolved");
+        console.log(result);
+    }).catch(function(error){
+        console.log("Promise.all rejected with error: " + error);
+    });
+
+</script>

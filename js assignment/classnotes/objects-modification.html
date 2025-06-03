@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    const obj = {
+        catName: "bekku",
+        length: "2 mtts"
+    }
+
+    obj["name"] = "bhavesh"// it is to add new object
+    obj.role ="instructor";// it is to add new object
+
+    obj.catName= "maola"// to change already existing property name 
+
+    delete obj["length"]// to delete the property 
+    Object.assign(obj,{"test": "testing"})// to add new key and value both
+
+    console.log(obj)
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<script>
+    const promise = new Promise(function(res,rej){
+        setTimeout(function(){
+            console.log("call back")
+            res("hello iam comming")
+        },2000)
+    })
+
+    promise.then(function(result){
+        console.log(result,"to hubli")
+    })
+</script>

@@ -1,0 +1,19 @@
+<script>
+    let obj={};
+    
+    console.log(obj)
+    
+    Array.prototype.add = 
+    function(){
+        let total=0;
+        for(let i=0;i<this.length;i++){
+            total+=this[i];
+        }
+        return total;
+    }
+    
+    let arr=[1,2,3,4,5];
+    let x=arr.add();
+    console.log(x);
+    
+    </script>

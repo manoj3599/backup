@@ -1,0 +1,29 @@
+<script>
+   function Employee(name,age){
+            this.age= age
+            this.name=name
+            
+        }
+        Employee.prototype.getDetails =function() {
+             return `${this.name}-${this.age}`
+        }
+           
+         
+    
+        function FoodToken (ammount) {
+            this.ammount =ammount
+        }
+
+   
+
+
+    let employeePerson = new Employee("akash",33);
+    let foodPerson = new FoodToken(3000)
+    //let FoodTokenPerson = Object.create({...employeePerson,...foodPerson})
+
+    //or
+    let FoodTokenPerson = Object.create(employeePerson)
+    FoodTokenPerson.ammount = 500
+
+    console.log(FoodTokenPerson.age,FoodTokenPerson.ammount)
+</script>

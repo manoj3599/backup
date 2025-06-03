@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Click</button>
+    <div id="demo"></div>
+    <script>
+        const colors =['red','white','green','orange']
+        let count =0;
+        document.querySelector('button').addEventListener('click',function(){
+            document.getElementById('demo').innerText=colors[count%4];
+            count++
+        })
+    </script>
+</body>
+</html>

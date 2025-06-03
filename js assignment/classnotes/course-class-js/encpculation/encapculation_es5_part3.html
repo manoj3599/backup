@@ -1,0 +1,36 @@
+<script>
+    function Person(name) {
+
+        let fullname = name //private varible
+//encpsulation
+        this.setName = function (name) {
+            fullname = name
+
+        }
+
+        this.getName = function () {
+            return fullname
+        }
+
+
+//private method abstraction
+        const getDetails = function () {
+            console.log(`the fullName is ${fullname}`)
+        }
+
+        this.getDisplay = function () {
+            getDetails()
+        }
+
+    }
+
+
+
+
+    let akashPerson = new Person("akash")
+    //akashPerson.setName("rakesh")
+    //console.log(akashPerson.getName())
+
+    akashPerson.getDisplay()
+
+</script>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            transition: transform 2s;
+        }
+
+        .rotate-clockwise {
+            transform: rotate(180deg);
+        }
+
+        .rotate-anticlockwise {
+            transform: rotate(-180deg);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="box"></div>
+
+    <script>
+    let rotationCount = 0;
+
+function rotateSquare() {
+    const box = document.getElementById('box');
+    
+    // Toggle between clockwise and anti-clockwise rotation
+    const rotationDirection = rotationCount % 2 === 0 ? 'rotate(180deg)' : 'rotate(-180deg)';
+    
+    // Apply the rotation
+    box.style.transform = rotationDirection;
+    
+    // Increment the rotation count for the next mouseover
+    rotationCount++;
+}
+
+    </script>
+
+</body>
+</html>

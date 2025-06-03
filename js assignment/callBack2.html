@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function simulateTask(duration, callback) {
+    setTimeout(callback, duration);//setTimeout which has duration of 3000 millisec exutes after this 
+}
+
+function display() {
+    console.log("display function");
+}
+simulateTask(3000,display)
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<script>
+    //new code
+    function Person(fullName){
+
+
+        let age = 0;
+            this.fullName = fullName;
+            
+        
+
+        this.setAge= function(newAge){
+            console.log(this)//thsi refer to person  as it is  linked through "this" key word to function Person(fullName){
+            age = newAge;
+        }
+
+        this.getAge = function(){
+            return age;
+        }
+
+        //private
+
+        const display = function() {
+            console.log(this)//thsi refer to window as it is not linked to function Person(fullName){
+            console.log("display function",this.fullName,age)
+        }//.bind(this); or check line 2
+
+        this.getFullDisplay = function() {
+            return display.bind(this)();//line 2 
+        }
+
+    }
+    let akashPerson = new Person("akash");
+    akashPerson.setAge(55);
+    akashPerson.getFullDisplay()//with this it is not able to axcess onst display = function() {
+    
+    
+    //console.log(akashPerson.age);
+    //console.log(akashPerson.age,akashPerson.fullName);
+</script>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let stringOfNumber ="33,hi,55,66,33";
+        let numberArray = [];
+        let arr = stringOfNumber.split(",");//convert to array
+        console.log(arr);
+        for(let obj of arr){
+            if(isNaN(obj)){//if it is not a number 
+                alert("something is wrong");
+                break;
+            }
+            numberArray.push(Number(obj));
+        }
+        console.log(numberArray)//convert string to array
+        //or
+        console.log(numberArray.toString())//convert array to string
+    </script>
+</body>
+</html>

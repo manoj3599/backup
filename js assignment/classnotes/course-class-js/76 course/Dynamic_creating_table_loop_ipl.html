@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Location</th>
+        </tr>
+        <!--<tr>
+            <td>mmc</td>
+            <td>22</td>
+            <td>Banglore</td>
+        </tr>-->
+        
+    </table>
+    <script>
+        let list =[
+            {
+                name:"manoj",
+                age:22,
+                location:"banglore"
+            },
+            {
+                name:"vinod",
+                age:33,
+                location:"mumbai"
+            },
+            {
+                name:"sures",
+                age:16,
+                location:"vishakpatnam"
+            },
+        ]
+
+        for(let obj of list){//loop for the object list
+            /*{
+                name:"manoj",
+                age:22,
+                location:"banglore"
+            },*/
+
+
+            let table = document.querySelector('table')
+        let tr = document.createElement('tr')//<tr></tr>
+
+        let result = Object.keys(obj)
+            /*Object.keys(obj) = ["name","age","location"]*/
+
+            result.forEach(function(input){//for loop 
+
+
+            let td = document.createElement('td')//<td></td>
+        td.textContent = obj[input]
+        //<td>obj["fullname"]</td> =  <td>manoj</td>
+
+        tr.appendChild(td)
+        })
+       
+
+        table.appendChild(tr)
+        /*<table>
+            <tr>
+                <td>akash</td>
+                <td>22</td>
+                <td>Banglore</td>
+            </tr>
+        </table>
+
+        */
+        }
+        
+       
+    </script>
+</body>
+</html>

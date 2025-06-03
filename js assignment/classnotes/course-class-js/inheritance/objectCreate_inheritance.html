@@ -1,0 +1,19 @@
+<script>
+    class Admin {
+        say = () => {
+            console.log(this.name)
+        }
+
+    }
+    class user extends Admin {
+        constructor(name) {
+            super()
+            this.name = name
+        }
+}
+        const ui = new user("manoj")
+        ui.say()
+
+
+    
+</script>

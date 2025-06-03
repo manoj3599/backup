@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">Welcome to Home</div>
+    <p class="heading">Welcome to css</p>
+    <p>Welcome to Javascript</p>
+    <p>Welcome to React</p>
+    <div class="heading">Welcome to Nodejs</div>
+    <h1 class="heading">Welcome to expressjs</h1>
+
+
+    <div id="range-a">
+        <input type="text" name="add">
+    </div>
+
+
+    <script>
+        var list =document.getElementById("demo");
+        var arrayList =document.getElementsByClassName("heading");
+        console.log(arrayList.length);
+        arrayList[0].innerHTML = 'world';
+        console.log(arrayList[0]);
+
+        //to select ptag with class as heading ""
+
+        var query = document.querySelector("p.heading");
+        console.log(query);
+
+
+        //to select input tag inside the divtag      <div id="range-a">
+        //<input type="text" name="add">
+    //</div>-->
+
+        var queryInput =document.querySelector("#range-a input")
+        console.log(queryInput);
+
+    </script>
+    
+</body>
+</html>

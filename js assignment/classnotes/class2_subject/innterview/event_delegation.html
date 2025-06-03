@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    // HTML structure
+
+<div id="parent">
+    <button class="item">Button 1</button>
+    <button class="item">Button 2</button>
+    <button class="item">Button 3</button>
+</div>
+
+<script>
+// JavaScript
+const parent = document.getElementById('parent');
+
+// Event delegation setup
+parent.addEventListener('click', function(event) {
+    // Check if the clicked element is a button with class 'item'
+    if (event.target.classList.contains('item')) {
+        console.log('Button clicked:', event.target.textContent);
+        // Your event handling code here
+    }
+});
+</script>
+</body>
+</html>

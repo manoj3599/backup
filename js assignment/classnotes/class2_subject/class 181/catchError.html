@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //basic way of catching error
+        const promise = new Promise(function(resolve, reject){
+            console.log('iam a promise')
+
+            /*setTimeout(()=>{
+                resolve('I CAN COME ');
+                console.log(promise);
+            },5000)*/
+
+           setTimeout(()=>{
+                reject('sORRY I CANt COME ');
+                //console.log(promise);
+            },5000)
+        })
+        //console.log(promise)
+        /*promise.then(
+            function(result){
+                console.log(result)//if accepted it gets done
+                //console.log('yes done ')
+            },
+            function(error){//if error this is done 
+                console.log(error)
+                //console.log('not done rejected')
+            }
+        )*/
+
+        //or
+        promise.catch(function(error){
+            console.log(error)
+        })
+    </script>
+</body>
+</html>

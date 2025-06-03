@@ -1,0 +1,9 @@
+<script>
+    async function getResult() {
+        const response = await fetch("https://mocki.io/v1/4bdc2c63-9e6a-4072-8b1e-4e3d49129ebd")
+        const data = await response.json()
+        console.log(data)
+    }
+
+    getResult()
+</script>

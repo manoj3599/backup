@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div onclick="parent()">
+        <button onclick="child()">Click ME</button>
+    </div>
+    <script>
+        function parent() {
+            console.log("parent clicked")
+        }
+        function child() {
+            console.log("child clicked")
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<script>
+    /*async function abcd() {
+        await new Promise(function (res, rej) {
+            setTimeout(function () {
+
+                res()
+            }, 3000)
+
+        })
+        console.log("ia acting as .then")
+    }*/
+
+
+    //normal function 
+
+    function abcd() {
+        new Promise(function (res, rej) {
+            setTimeout(function () {
+
+                res()
+            }, 3000)
+        }).then(function (result) {
+            console.log("ia acting as .then")
+        })
+    }
+
+    abcd()
+</script>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    background-color:#ACBCFF;
+    /* height: 3rem; */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  
+
+  #title-container {
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  
+
+  
+  li{
+    padding: 5px;
+    margin: 0px;
+  }
+  li:nth-child(even) {
+    /* margin-bottom: 10px; */
+    background-color: #AEE2FF;
+  }
+  li:nth-child(odd) {
+    /* margin-bottom: 10px; */
+    background-color:#E6FFFD ;
+  }
+  
+  @media (max-width: 600px) {
+    body {
+      padding: 10px;
+    }
+  }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <h1>Products Available</h1>
+        <!-- <h3>Titles:-</h3> -->
+        <div id="title-container"></div>
+      </div>
+
+      <script>
+        // javascript code goes here
+const container = document.querySelector("#title-container");
+
+async function initial(){
+    let response = await fetch("https://content.newtonschool.co/v1/pr/63b6c911af4f30335b4b3b89/products")
+    let data = await response.json()
+
+    data.forEach((input)=>{
+let element = document.createElement("li")
+element.textContent = input.title
+container.appendChild(element)
+    })
+}
+
+initial()
+
+/*const container = document.querySelector("#title-container");
+
+async function initial(){
+    
+        let response = await fetch("https://content.newtonschool.co/v1/pr/63b6c911af4f30335b4b3b89/products");
+        let data = await response.json();
+
+        data.forEach((input) => {
+            let element = document.createElement("li");
+            element.textContent = input.title;
+            container.appendChild(element);
+        });
+    
+}
+
+initial();*/
+      </script>
+</body>
+</html>

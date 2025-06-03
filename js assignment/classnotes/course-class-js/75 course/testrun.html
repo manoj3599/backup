@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    #recipeList {
+        list-style-type: none;
+    }
+
+    #recipeList li {
+        cursor: pointer;
+        padding: 5px;
+        border: 1px solid #000;
+        margin-bottom: 10px;
+        width: 300px;
+    }
+
+    #recipeReadyInMinutes {
+        margin-top: 20px;
+        font-size: 20px;
+        color: red;
+        font-weight: bold;
+    }
+
+    </style>
+</head>
+<body>
+    <ul id="recipeList"></ul>
+    <p id="recipeReadyInMinutes"></p>
+
+    <script>
+    function initial() {
+        fetch("https://content.newtonschool.co/v1/pr/64996337e889f331d43f70ba/recipes")
+            .then((result) => result.json())
+            .then((data) => bindingData(data));
+    }
+
+    initial();
+
+    function bindingData(input) {
+        let time = document.querySelector("#recipeReadyInMinutes");
+        let parent = document.querySelector("#recipeList");
+        input.forEach((obj) => {
+            let listItem = document.createElement('li');
+            listItem.textContent = obj.title;
+            listItem.addEventListener('click', function() {
+                time.innerHTML = `Ready in minutes: ${obj.readyInMinutes}`;
+            });
+            parent.appendChild(listItem);
+        });
+    }
+    </script>
+</body>
+</html>

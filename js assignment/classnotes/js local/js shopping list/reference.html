@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="productsContainer">
+
+
+    </div>
+    <script>
+        const productsContainerNode = document.getElementsByClassName("productsContainer")[0]
+        const html = "";
+        for (let product of productList) {
+            html += `<div class="product">
+          <img class='pimage' width="250px" height="350px" src=" ${product.image} "
+              alt="">
+          <p class='ptitle'>${product.title}</p>
+          <div class="priceandaddtocart">
+              <p class="pprice">${product.price} DH</p>
+              <button class="addtocart" productid=${product.id}>add to cart icon</button>
+          </div>
+      </div>`
+        }
+        const productList = [
+            {
+                id: 1,
+                image: "",
+                title: "shirt ",
+                price: 3000
+            },
+            {
+                id: 2,
+                image: "",
+                title: "tshirt",
+                price: 4000
+            },
+            {
+                id: 3,
+                image: "",
+                title: "pants",
+                price: 6000
+            }
+        ]
+    </script>
+
+</body>
+
+</html>

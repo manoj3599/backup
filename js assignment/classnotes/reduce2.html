@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reduce Function</title>
+</head>
+
+<body>
+
+    <script>
+        let array = [1, 2, 3];
+
+        function myReduce(array, callback, initialValue) {
+            let returnedValue = initialValue;
+
+            for (let i = 0; i < array.length; i++) {
+                let actualValue = array[i];
+                returnedValue = callback(returnedValue, actualValue, i, array);
+            }
+
+            return returnedValue;
+        }
+
+        let sum = myReduce(array, function (accumulator, currentValue) {
+            return accumulator + currentValue;
+        }, 0);
+
+        console.log(sum); // Output: 6
+    </script>
+
+</body>
+
+</html>

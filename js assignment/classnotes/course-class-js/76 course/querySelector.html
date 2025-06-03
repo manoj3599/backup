@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>querySelector Example</title>
+</head>
+<body>
+    <div id="container">
+        <p class="text">Hello World!</p>
+        <a href="#" class="link">Click me</a>
+    </div>
+
+    <script>
+        // Select the first element with the class 'text'
+        const textElement = document.querySelector('.text');
+        console.log(textElement.textContent); // Output: Hello World!
+
+        // Select the first 'a' element
+        const linkElement = document.querySelector('a');
+        console.log(linkElement.textContent); // Output: Click me
+
+        // Select the element with ID 'container'
+        const containerElement = document.querySelector('#container');
+        console.log(containerElement);
+    </script>
+</body>
+</html>

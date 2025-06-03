@@ -1,0 +1,19 @@
+<script>
+    function debounce(func, delay) {
+  let timerId;
+  return function() {
+    clearTimeout(timerId);
+    timerId = setTimeout(() => {
+      func.apply(this, arguments);
+    }, delay);
+  };
+}
+
+// Example usage
+const debouncedFunction = debounce(() => {
+  console.log('Debounced function executed');
+}, 300);
+
+window.addEventListener('scroll', debouncedFunction);
+
+</script>

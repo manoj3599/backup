@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Student {
+            #name = 'manoj'//3
+            printName =() => console.log(this.#name)//2
+        }
+       
+        const student1 = new Student()
+        student1.printName()//1 
+        console.log(student1.name);//this ios not possible because name should be called inside class student
+    </script>
+</body>
+</html>

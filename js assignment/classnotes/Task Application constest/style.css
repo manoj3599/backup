@@ -1,0 +1,9 @@
+.task {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid gray;
+}
+button[disabled] {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+}

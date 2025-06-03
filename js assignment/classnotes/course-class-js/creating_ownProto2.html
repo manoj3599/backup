@@ -1,0 +1,32 @@
+<script>
+    let canteen = {
+        lays:5,
+        food:7,
+        totalAmmount : function(a) {
+            this.lays -= a;
+        }
+    }
+
+    let personA ={
+        age:67,
+        fullName:"akash"
+        
+    }
+    personA.__proto__ = canteen
+    personA.totalAmmount(1)
+
+    console.log(personA.lays)
+
+    let personB ={
+        age:22,
+        fullName:"POTTER"
+        
+    }
+    personB.__proto__ = canteen;
+    console.log(personB.food)
+    personB.food = 2;
+    console.log(personB.food)
+    
+
+
+</script>

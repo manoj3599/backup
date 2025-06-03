@@ -1,0 +1,12 @@
+<script>
+    const promise = new Promise(function(res,rej){
+        setTimeout(()=>{
+            res("hello")
+        },3000)
+    })
+
+
+    console.log(promise.then(function(result){
+        return result
+    }))
+</script>

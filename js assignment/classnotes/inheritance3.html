@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+ class GrandParent {
+    constructor(binaryNumber) {//7 here "ggy" is taken 
+        console.log(binaryNumber)//8 here "ggy" is printed 
+    }
+        printBinary() {
+            console.log("01000100101001")
+        }
+    }
+
+
+    class Parent extends GrandParent { //extends inherits the features from class GrandParent
+        constructor(codeName,binaryNumber) {// 4 here it takes "xyz","ggy"
+        console.log(codeName) //5 where "xyz" is printed 
+        super(binaryNumber)//6 send "ggy" to location 7
+    }
+        
+        developProgram = function() {
+            console.log("iam developing a program")
+            
+        }
+    }
+    class Child extends Parent { //extends inherits the features from class Parent and also from class GrandParent
+        
+        constructor(aiName,codeName,binaryNumber) {//1
+            
+        console.log(aiName)//2 "chatgpt" is printed
+        super(codeName,binaryNumber)//3 here it is sent to 4th location 
+    }
+       
+        useAi = function() {
+            console.log("iam using ai")
+        }
+    }
+
+    const child =new Child("chatgpt","binary search ","0001010000") //taken to 1st location
+    child.developProgram()
+    child.printBinary()
+
+    </script>
+</body>
+</html>

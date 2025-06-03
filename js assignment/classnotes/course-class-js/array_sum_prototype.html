@@ -1,0 +1,16 @@
+<script>
+    Array.prototype.sum = function() {
+        let total =0;
+        for(let i=0;i<this.length;i++){
+            total+=this[i]
+        }
+        return total;
+    }
+    let arrayList = [33,44,55,66];
+    let sumOfArray = arrayList.sum();
+    console.log(sumOfArray)
+
+    let arrayList2 = [398,434,5675,606];
+    let sumOfArray2 = arrayList2.sum();
+    console.log(sumOfArray2)
+</script>

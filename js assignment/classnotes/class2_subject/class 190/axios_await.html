@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        async function sendRequest(){
+            const {data} = await axios.get("https://mocki.io/v1/303b2c80-d925-4aec-a39c-6b9ae7a0987d")
+            console.log(data)
+        }
+    sendRequest()
+
+    </script>
+</body>
+</html>

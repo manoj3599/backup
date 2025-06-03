@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <title>Myntra</title>
+    <style>
+        .global {
+            display: flex;
+            width: 98%;
+            margin: auto;
+            border: 1px solid wheat;
+            justify-content: space-between; /* Add this to align the navigation items at the top */
+        }
+
+        .nav-bar {
+            display: flex;
+            align-items: center; /* Add this for vertical centering */
+        }
+
+        .nav-bar .box {
+            width: 50px;
+            height: 20px;
+            background-color: aqua;
+            margin-right: 10px; /* Add some margin for spacing between items */
+        }
+
+        .sidebar {
+            margin: 19px;
+            width: 30%;
+            border: 1px solid white;
+            height: 618px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .sidebar .box {
+            width: 100%;
+            background-color: aqua;
+            height: 200px;
+        }
+
+        .main-section {
+            margin: 16px;
+            width: 69%; /* Adjust the width to make space for the sidebar */
+            border: 1px solid white;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: space-evenly;
+        }
+
+        .main-section .box {
+            width: 20%;
+            height: 200px;
+            background-color: tomato;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="global">
+        <div class="nav-bar">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+        <div class="sidebar">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+        <div class="main-section">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>

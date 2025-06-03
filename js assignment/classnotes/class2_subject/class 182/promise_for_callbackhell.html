@@ -1,0 +1,29 @@
+<script>
+    let count = 0;
+    console.log(count)
+
+    function craetePromiseToRun2SecTimer() {
+        return new Promise(function (res, rej) {
+            setTimeout(function () {
+                count += 2
+                console.log(count)
+                res()
+            }, 2000)
+
+        })
+    }
+
+
+
+    craetePromiseToRun2SecTimer().then(function () {
+       return craetePromiseToRun2SecTimer()
+    }).then(function () {
+       return craetePromiseToRun2SecTimer()
+       }).then(function () {
+           return craetePromiseToRun2SecTimer()
+           }).then(function () {
+                return craetePromiseToRun2SecTimer()
+            })
+        
+    
+</script>

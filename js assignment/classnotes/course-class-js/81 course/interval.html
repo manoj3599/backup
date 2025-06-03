@@ -1,0 +1,18 @@
+<body>
+    <h1 id="display"></h1>
+    <button id="intervalStop">Stop Timer</button>
+   <script>
+    timer = document.querySelector('#display')
+    
+    let count =0;
+    let timerId = setInterval(() => {
+        count ++;
+        timer.innerHTML = count
+        console.log(count)
+    },1000);
+
+    document.querySelector("#intervalStop").addEventListener('click',function(){
+clearInterval(timerId)
+    })
+</script> 
+</body>

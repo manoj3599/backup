@@ -1,0 +1,21 @@
+<script>
+    let sayHiMixin = {
+        sayHi() {
+            alert(`Hello ${this.name}`)
+        },
+        sayBye() {
+            alert(`Bye ${this.name}`)
+        }
+    }
+    
+console.log(sayHiMixin.prototype)
+    class User {
+        constructor(name) {
+            this.name = name
+        }
+    }
+    Object.assign(User.prototype,sayHiMixin);
+    const user1 = new User("Manoj")
+    user1.sayHi();
+    user1.sayBye();
+</script>

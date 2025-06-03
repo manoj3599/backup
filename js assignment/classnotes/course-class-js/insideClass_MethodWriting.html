@@ -1,0 +1,22 @@
+<script>
+    //new code
+    class Person{
+        constructor(fullName,age){
+            this.fullName = fullName;
+            this.age = age;
+        }
+
+        setAge(newAge){
+            this.age = newAge;
+        }
+
+        getAge(){
+            return this.age;
+        }
+
+    }
+    let akashPerson = new Person("akash",33);
+    akashPerson.setAge(55);
+    console.log(akashPerson.getAge());
+    console.log(akashPerson.age,akashPerson.fullName);
+</script>

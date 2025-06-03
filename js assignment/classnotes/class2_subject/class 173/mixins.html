@@ -1,0 +1,22 @@
+<script>
+    class User {
+    constructor(name){
+        this.name = name
+    }
+}
+
+const classroomMethods = {
+    printStudentsName: function() {
+        console.log(this.name)
+    }
+}
+
+Object.assign(User.prototype,classroomMethods)
+const user1 = new User("Bhavesh")
+user1.printStudentsName()
+
+
+
+//let mac = new User("manoj")
+//classroomMethods.printStudentsName.call(mac);
+</script>

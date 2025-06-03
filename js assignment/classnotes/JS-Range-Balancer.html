@@ -1,0 +1,52 @@
+<body>
+
+<div id="max-sum-holder">
+Input max sum:-<input type="number" value="50" min="50" onchange="maxSumChangeHandler(event)">
+</div>
+<div id="range-a-holder"  >
+    <input type="range" value="0" max="0" onchange="rangeAChangeHandler(event)">
+    <span id="range-a-value">0</span>
+
+</div>
+
+<div id="range-b-holder"  >
+    <input type="range" value="50" max="50" onchange="rangeBChangeHandler(event)">
+    
+    <span id="range-b-value">50</span>
+
+</div>
+<div id="sum">50</div>
+<script>
+    var total_sum = 50;
+    var selector_one = "#range-a-holder input";
+    var selector_two = "#range-b-holder input";
+    var rangeAValue = 0;
+    var rangeBValue = 50;
+    function maxSumChangeHandler(event){
+        total_sum = Number(event.target.value);
+        rangeAValue = Number(document.querySelector(selector_one).value);
+        rangeBValue = Number(document.querySelector(selector_two).value);
+        settingMaxvalues();
+
+    }
+    function rangeAChangeHandler(event) {
+        rangeAValue = Number(event.target.value);
+        document.getElementById('range-a-value').innerHTML = total_sum - rangeBValue;
+        settingMaxvalues();
+
+    }
+    function rangeBChangeHandler(event){
+        rangeBValue = Number(event.target.value);
+        document.getElementById('range-b-value').innerHTML = total_sum - rangeAValue;
+        settingMaxvalues();
+
+    }
+    function settingMaxvalues(){
+        document.getElementById('sum').innerHTML= rangeAValue + rangeBValue;
+        document.querySelector(selector_one).max = total_sum - rangeBValue;
+        document.querySelector(selector_two).max = total_sum - rangeAValue;
+
+    }
+</script>
+</body>
+

@@ -1,0 +1,56 @@
+<script>
+    import "../styles/App.css";
+import React, { useState, useEffect } from "react";
+
+const keys = "abcdefghijklmnopqrstuvwxyz0123456789 ".split("");
+
+const App = () => {
+
+ const [getInput, SetInput]=useState("")
+ const [getQuote,setQuote] = useState('');
+
+ function OnClickHandler(key){
+SetInput(getInput+key)
+ }
+
+ useEffect(()=>{
+  if(getInput == "forty two"){
+    intial()
+  }
+ },[getInput])
+
+
+  let intial = async()=>{
+    try{
+let response = await fetch("https://api.quotable.io/random")
+      response = await response.json()
+      setQuote("response.content");
+
+    }catch{
+      console.log("error")
+      setQuote("response.content");
+    }
+  }
+
+  if(getQuote){
+    return(
+      <div className = "quote">{getQuote}</div>
+    )
+  }
+
+  return (
+    <div className="keyboard">
+      <div className="preview">{getInput}</div>
+      <div>
+        {keys.map((key) => (
+          <button key={key} onClick={()=>{OnClickHandler(key)}} id={key === " " ? `key-space` : `key-${key}`}>
+            {key === " " ? "Space" : key.toUpperCase()}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default App;
+</script>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .correct {
+  color: green;
+}
+
+.incorrect {
+  color: red;
+  text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+    <div id="timer"></div>
+    <div id="wpm"></div>
+    <div id="container">Welcome</div>
+</body>
+<script>
+    const container = document.querySelector("#container")
+    const timerElement = document.querySelector('#timer')
+    const wpmElement = document.querySelector('#wpm')
+
+
+    let timerId;
+    let StartTime;
+    let quote;
+    window.addEventListener('click', function(event){
+if(container.contains(event.target)){
+    startTimer()
+}else{
+    stopTimer();
+    timerElement.innerText = 0//if we click outside timer stops from line 55
+}
+    })
+
+    function startTimer(){
+        startTime = new Date()
+        timerElement.innerText = 0;
+        timerId = setInterval(function(){
+timerElement.innerText = getTimer()
+        },1000)
+    }
+
+//to stop timer
+    function getTimer(){
+        //it will return in seconds
+        return Math.floor((new Date() - startTime) / 1000)
+    }
+//to stop timer
+    function stopTimer(){
+clearInterval(timerId)
+    }
+
+
+    async function renderNewQuote(){
+        let response = await fetch("https://content.newtonschool.co/v1/pr/63b70222af4f30335b4b3b9a/buses")
+        response = await response.json();
+        quote = response[0].source
+        console.log(quote)
+    }
+
+    renderNewQuote()
+</script>
+</html>

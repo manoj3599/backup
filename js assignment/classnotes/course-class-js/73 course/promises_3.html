@@ -1,0 +1,39 @@
+<script>
+    function GpayScan(ammount,callback){
+        return new Promise((resolve) => {
+          setTimeout(function(){
+             resolve(ammount);//this end the function without this it will not end
+        },5000)
+        })
+       } 
+
+
+
+       function CheckingMyBalance(ammount) {
+        return new Promise((resolve) => {
+          let balance = 3000
+        setTimeout(function(){
+            if((balance-ammount)>0){
+                console.log("existiong balance is avaliable to proceed ")
+              resolve(balance-ammount)
+            }else{
+                console.log("insufficient balance")
+
+            }
+
+            
+           
+        },2000)
+        })
+        
+        
+    }
+       
+       GpayScan(300).then((result) =>{
+        console.log("GpayScan is sucessfull", result)
+        return CheckingMyBalance(result)
+       }).then((input) => {
+        console.log(`ammount deducted & existing balance is ${input}`)
+       })
+    
+    </script>

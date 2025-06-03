@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+
+        //normal axios
+        /*
+ function sendRequest(){
+    const reqPromise =  axios.get("https://type.fit/api/quotes")
+    reqPromise.then(function(response){
+        response.data.forEach(function(quote){
+            console.log(quote.text)
+        })
+    })
+}
+sendRequest()*/
+
+
+//for async await
+
+async function sendRequest(){
+    const response = await axios.get("https://type.fit/api/quotes")
+    response.data.forEach(function(quote){
+        console.log(quote["text"])
+})
+}
+sendRequest()
+        </script>
+        </body>
+</html>

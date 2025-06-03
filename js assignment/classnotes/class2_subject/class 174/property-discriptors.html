@@ -1,0 +1,28 @@
+<script>
+    const user ={
+ name : "manoj"
+}
+
+console.log(Object.getOwnPropertyDescriptor(user, "name"))
+
+
+const obj = {}
+//obj.name ="kiran"//this makes it true
+
+Object.defineProperty(obj,"name",{
+value:"BHAVESH",
+writable: false,
+enumerable: false,
+configurable:false,
+})
+console.log(Object.getOwnPropertyDescriptor(obj,"name"))//al reamins false 
+
+obj.name = "mustafa"
+
+Object.defineProperty(obj,"name",{
+writable: true,//cannot change writable and even for enumerable to true once it is made false..intially false cannoct change it to true but its trur it can be made false
+
+})
+console.log(Object.getOwnPropertyDescriptor(obj,"name"))
+
+</script>

@@ -1,0 +1,23 @@
+<script>
+    let obj = {
+        fullName: "akash",
+        age: 22,
+        getFullName: function() {
+            return this.fullName;
+        },
+        getDisplay: function() {
+            console.log("display function");
+        },
+        getFlag: function() {
+            console.log("flag function");
+        },
+        deleteProperty: function(input) {
+            delete this[input];
+        }
+    };
+    
+    //console.log(obj);
+    obj.deleteProperty("getDisplay"); // Deleting the property, not the method
+    delete obj.age
+    console.log(obj);
+</script>

@@ -1,0 +1,31 @@
+<script>
+    const display = {
+        one:2,
+        two:2,
+        sum:function () {
+            return this.one +this.two;
+            
+        }
+    }
+
+    const calculator = {
+     __proto__:display,
+     product :function () {//bind display oblect with product function using __proto__:display,
+        return this.one*this.two
+     }
+    }
+
+    const xyz = {
+     __proto__:calculator,
+     multiplication :function () {//bind display oblect with product function using __proto__:display,
+        return this.one*this.two
+     }
+    }
+
+    console.log(xyz.sum());
+    console.log(xyz.product());
+
+    console.log(calculator.product());
+    console.log(calculator.sum());
+
+</script>

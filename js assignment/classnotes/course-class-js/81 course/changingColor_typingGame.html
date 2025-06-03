@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .correct {
+            color: green;
+        }
+
+        .incorrect {
+            color: red;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="timer"></div>
+    <div id="wpm"></div>
+    <div id="container"></div>
+</body>
+<script>
+    const container = document.querySelector("#container")
+    const timerElement = document.querySelector('#timer')
+    const wpmElement = document.querySelector('#wpm')
+
+
+    let timerId;
+    let StartTime;
+    let quote;
+    let isTimerStarted = false
+    let currentIndex = 0;
+    window.addEventListener('click', function (event) {
+        if (container.contains(event.target)) {
+            startTimer()
+        } else {
+            stopTimer();
+            timerElement.innerText = 0//if we click outside timer stops from line 55
+            currentIndex = 0;
+
+        }
+    })
+
+    function startTimer() {
+        isTimerStarted = true
+        startTime = new Date()
+        timerElement.innerText = 0;
+        timerId = setInterval(function () {
+            timerElement.innerText = getTimer()
+        }, 1000)
+    }
+
+    //to stop timer
+    function getTimer() {
+        //it will return in seconds
+        return Math.floor((new Date() - startTime) / 1000)
+    }
+    //to stop timer
+    function stopTimer() {
+        isTimerStarted = false
+        clearInterval(timerId)
+    }
+
+
+    async function renderNewQuote() {
+        let response = await fetch("https://content.newtonschool.co/v1/pr/63b6c911af4f30335b4b3b89/products")
+        response = await response.json();
+        quote = response[0].title
+        console.log(quote)
+        //adding span tag
+        container.innerHTML = ""
+        currentIndex = 0;
+        quote.split('').forEach(function (char) {
+            let span = document.createElement('span')
+            span.innerText = char;
+            container.appendChild(span)
+        })
+    }
+
+    renderNewQuote()
+
+    window.addEventListener("keydown", function (e) {
+        if (isTimerStarted) {
+            let charCode = e.keyCode
+            if ((charCode > 64 && charCode < 91)
+                || (charCode > 96 && charCode < 123)
+                || charCode == 32 || charCode == 188 
+                || charCode == 186 || charCode == 222 
+                || charCode == 190 || charCode == 191 
+                || charCode == 49 || charCode == 189) {
+
+                    if(quote[currentIndex] == e.key){
+                        container.childNodes[currentIndex].classList.add('correct')
+                        //container.childNodes[currentIndex].classList.remove('incorrect')
+                    }else{
+                        container.childNodes[currentIndex].classList.add('incorrect')
+                        //container.childNodes[currentIndex].classList.remove('correct')
+                    }
+                    currentIndex++;
+
+            }
+        }
+    })
+</script>
+
+</html>

@@ -1,0 +1,21 @@
+<script>
+    function Person(name){
+           
+            let fullname=name
+           
+        
+      
+    Person.prototype.setName = function(name){
+fullname = name
+    }
+
+    Person.prototype.getName = function(){
+return fullname
+    }
+}
+
+    let akashPerson = new Person("akash")
+    //akashPerson.setName("rakesh")
+    console.log(akashPerson.getName())
+    
+</script>

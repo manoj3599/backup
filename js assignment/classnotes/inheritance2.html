@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+ class GrandParent {
+        printBinary() {
+            console.log("01000100101001")
+        }
+    }
+
+
+    class Parent extends GrandParent { //extends inherits the features from class GrandParent
+        developProgram = function() {
+            console.log("iam developing a program")
+        }
+    }
+    class Child extends Parent { //extends inherits the features from class Parent and also from class GrandParent
+        useAi = function() {
+            console.log("iam using ai")
+        }
+    }
+
+    const child =new Child() //when iam calling its implementing class Child
+    child.developProgram() //this has features of class Parent inside class Child prints console.log("iam developing a program")
+    child.useAi()// inside the class Child invoke the function useAi
+    child.printBinary()
+    </script>
+</body>
+</html>

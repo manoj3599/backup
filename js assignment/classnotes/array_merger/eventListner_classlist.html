@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .rectangle{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+    }
+    .circle{
+        width: 200px;
+        height: 200px;
+        background-color: yellow;
+    }
+</style>
+<body>
+    <button id="add">Add</button>
+    <div id="demo" class="rectangle"></div>
+
+
+    <script>
+        document.getElementById("add").addEventListener('click',function(){
+            document.getElementById("demo").classList.remove("rectangle");//acces class use classList
+            document.getElementById("demo").classList.add("circle");
+        })
+
+    </script>
+</body>
+</html>

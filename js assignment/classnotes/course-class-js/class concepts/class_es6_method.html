@@ -1,0 +1,17 @@
+<script>
+    //constructor function using es6
+    class Person {
+        constructor(name,age,adress){
+            this.age= age
+            this.name=name
+            this.adress=adress
+        }
+        getDetails() {
+            return `${this.name}-${this.age}-${this.adress}`   
+        }
+    }
+
+
+    let akashPerson = new Person("akash",33,"hubli")
+    console.log(akashPerson.getDetails())
+</script>

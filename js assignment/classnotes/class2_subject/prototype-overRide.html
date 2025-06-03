@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class One {
+            prototype = {
+                1: "one"
+            }
+        }
+
+
+        One.prototype[1] = "One"
+
+        class Two extends One {
+            //instance number 
+            prototype = {// same prototype of class one and two but does not over ride 
+                1: "two"
+            }
+        }
+
+        //prototype number
+
+        Two.prototype[2] = "Two"
+
+        const two = new Two()
+        console.log(two[1], two[2])
+    </script>
+</body>
+</html>

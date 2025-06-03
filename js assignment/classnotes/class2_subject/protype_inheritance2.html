@@ -1,0 +1,29 @@
+<script>
+    class Animal {
+        constructor(name) {
+            this.name = name
+        }
+    }
+            
+        Animal.prototype.sayMyLine = () => {
+          console.log('iam an animal')
+      }  
+            
+    
+
+    class Bird extends Animal {
+        constructor(name) {
+            super(name)
+            this.name = name
+        }
+    }
+    Bird.prototype.doThevoice = () => {
+        console.log('qwak qwak')
+    }
+
+    const sparrow = new Bird('koyel')
+    sparrow.doThevoice(),sparrow.sayMyLine()
+
+    const lion = new Animal('tiger')
+    lion.sayMyLine();
+</script>

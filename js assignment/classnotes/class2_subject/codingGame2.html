@@ -1,0 +1,22 @@
+<script>
+
+function job(data) {
+    return new Promise((res,rej)=>{
+        if(typeof data !== 'number'){
+            rej("error")
+        }else if(data%2!==0){
+            setTimeout(()=>{
+            res("odd")
+            },1000)
+        }else if(data%2===0){
+            setTimeout(()=>{
+            rej("even")
+            },2000)
+        }
+            
+        })
+    }
+
+
+module.exports = job;
+</script>

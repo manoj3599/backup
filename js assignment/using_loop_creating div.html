@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+      .flex-box {
+        width: 10%;
+        height: 25px;
+        text-align: center;
+        padding: 20px;
+        background-color: greenyellow;
+      }
+      input,
+      button {
+        display: block;
+        margin: 20px auto;
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="number" id="add" />
+    <button id="Submit" onclick="onSubmitHandler()">Submit</button>
+    <div id="demo" class="box"></div>
+    <script>
+      function onSubmitHandler() {
+        var input = document.getElementById("add").value;
+        input = Number(input);
+        console.log(input);
+        console.log(typeof input);
+
+        var global = document.getElementById("demo");
+        for (var i = 1; i <= input; i += 2) {
+          //<div></div>
+          var parent = document.createElement("div");
+          //2
+          var child = document.createTextNode(i);
+          //<div>2</div>
+          parent.appendChild(child);
+          //<div class = "flex-box">2</div>
+
+          parent.setAttribute("class", "flex-box");
+
+          //<div id=demo><div class = "flex-box">2</div></div>
+          global.appendChild(parent);
+        }
+      }
+    </script>
+  </body>
+</html>

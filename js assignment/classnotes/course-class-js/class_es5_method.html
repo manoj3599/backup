@@ -1,0 +1,15 @@
+<script>
+    function Person(name,age,adress){
+            this.age= age
+            this.name=name
+            this.adress=adress
+        }
+      
+    
+Person.prototype.getDetails = function() {
+    return `${this.name}-${this.age}-${this.adress}`   
+}
+
+    let akashPerson = new Person("akash",33,"hubli")
+    console.log(akashPerson.getDetails())
+</script>

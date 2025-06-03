@@ -1,0 +1,12 @@
+<script>
+    const promiseReq = fetch("https://api.github.com/gists/public")//it send promise 
+
+
+  promiseReq.then(function(resObj){//body:buffer
+    console.log(resObj)
+    const resPromise = resObj.json()//returns promise hence below promise is being used
+    resPromise.then(function(res){//we use then wen above promise to use
+        console.log(res)
+    })
+  })
+</script>

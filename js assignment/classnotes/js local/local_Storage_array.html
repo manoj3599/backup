@@ -1,0 +1,11 @@
+<script>
+    localStorage.setItem("fullName",JSON.stringify([33,44,56,77]));//convert to string to store the data as it is only stored in the form of sstring 
+    console.log(localStorage.getItem("fullName"));//still in string form 
+    console.log(typeof localStorage.getItem("fullName"));
+
+
+    let fullName = JSON.parse(localStorage.getItem("fullName"))//paarse convert to object and localStorage.getItem retrives the data 
+    console.log(typeof fullName)//converted to object in array form 
+    console.log(fullName[2])//in object the 2nd array is 56
+
+</script>

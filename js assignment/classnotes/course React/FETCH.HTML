@@ -1,0 +1,14 @@
+<script>
+    const intial = async () => {
+        try {
+            let page = 3; // Make sure to define the page variable
+            //query-params  - page
+            let response = await fetch(`https://content.newtonschool.co/v1/pr/63b6c911af4f30335b4b3b89/products?page=${page}&limit=5`);
+            let data = await response.json();
+            console.log(data);
+        } catch (err) {
+            console.log(err);
+        }
+    }
+    intial();
+</script>

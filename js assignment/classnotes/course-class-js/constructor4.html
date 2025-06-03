@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class xyz {//4
+            constructor(name,x){//2
+               this.name = name//3
+            this.description = x 
+            }
+            printError = function() {//always outside class
+                console.log(this.description)
+            }
+            
+        }
+        const bhavesh1 = new xyz("manoj","driver")//1
+        const thugesh = new xyz("kiran","cleaner")
+        const suresh = new xyz("vipul","carpenter")
+        bhavesh1.printError()
+    </script>
+</body>
+</html>

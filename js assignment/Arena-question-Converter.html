@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        .input{
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .output{
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .button{
+            display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 71px;
+        }
+        #swapButton{
+            background-color: blue;
+            color: white;
+            border-radius: 5px;
+            height: 39px;
+    width: 103px;
+        }
+
+        #submitButton{
+            background-color: blue;
+            color: white;
+            border-radius: 5px;
+            height: 39px;
+    width: 103px;
+        }
+
+        #inputBase{
+            height: 36px;
+    width: 261px; 
+    border-radius: 5px;
+        }
+
+        #inputNumber{
+            width: 256px;
+    height: 283px;
+    border-radius: 5px;
+        }
+
+
+        #outputBase{
+            height: 36px;
+    width: 261px;
+    border-radius: 5px; 
+        }
+
+        #outputNumber{
+            width: 256px;
+    height: 283px;
+    border-radius: 5px;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <h1 >Converter</h1>
+    <div class="container">
+    
+    <div class="input" >
+        <h2 style="font-size: 32px;">From</h2>
+        <label for="inputBase" ></label>
+        <select id="inputBase">
+            <option value="decimal">Decimal</option>
+            <option value="hexadecimal">Hexadecimal</option>
+            <option value="octal">Octal</option>
+            <option value="binary">Binary</option>
+        </select>
+        <label for="inputNumber"></label>
+        <textarea id="inputNumber"></textarea>
+    </div>
+
+    <div class="button">
+        <button id="swapButton">Swap</button>
+        <button id="submitButton">Submit</button>
+
+    </div>
+
+    <div class="output">
+        <h2 style="font-size: 32px;">To</h2>
+        <label for="outputBase"></label>
+        <select id="outputBase">
+            <option value="decimal">Decimal</option>
+            <option value="hexadecimal">Hexadecimal</option>
+            <option value="octal">Octal</option>
+            <option value="binary">Binary</option>
+        </select>
+        <label for="outputNumber"></label>
+        <textarea id="outputNumber"></textarea>
+
+    </div>
+</div>
+    
+</body>
+</html>

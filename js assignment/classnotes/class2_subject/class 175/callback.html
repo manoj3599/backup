@@ -1,0 +1,12 @@
+<script>
+    function asyncronus(sync){
+        console.log('Iam an sync work, 10 sec ho gayi');
+        sync()
+
+    }
+    function syncronus(){
+        console.log('Iam sync work ')
+    }
+
+    asyncronus(syncronus)
+</script>

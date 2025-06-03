@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       
+        let a = 10;
+        function abc() {
+             let b = 30;
+            function def() {
+            console.log(a);
+            console.log(b);
+        }
+        return def;
+        }
+        const ghi = abc()
+        const fft = ghi()// with calling def() also it is executig this method is called closure 
+        
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,33 @@
+<script>/*
+
+    const promise = new Promise(function(res,rej){
+        res(1)
+    })
+
+    promise.then(function(result){
+        return result+1;
+    }).then(function(result){
+        return result+1;
+    }).then(function(result){
+       console.log(result)
+    })*/
+
+   function careatePromise1(){
+    return new Promise(function(res){
+        res(1)
+    })
+   } 
+
+   function careatePromise2(){
+    return new Promise(function(res){
+        console.log("promise 2 craeted")
+        res(2)
+    })
+   }
+
+    careatePromise1().then(function(result){
+        console.log(result)
+            careatePromise2()
+        })
+
+</script>

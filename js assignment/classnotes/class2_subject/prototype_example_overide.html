@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class One {
+            prototype = {
+                1: "one"
+            }
+        }
+        class Two {
+            prototype = {// same prototype of class one and two but does not over ride 
+                1: "two"
+            }
+        }
+
+        const two = new Two()
+        console.log(two)
+    </script>
+</body>
+</html>

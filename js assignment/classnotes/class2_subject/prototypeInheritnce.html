@@ -1,0 +1,34 @@
+<script>
+
+    class Animal {
+        constructor(name, type) {
+            this.name = name;
+            this.type = type;
+        }
+    }
+    //prototype 1
+    Animal.prototype.sayHi = function () {
+        console.log("hello")
+    }
+
+
+    //new class inherits from Animal 
+
+    class Bird extends Animal {
+
+    }
+
+     //prototype 2
+    Bird.prototype.sayBye = function() {
+        console.log("bye")
+    }
+
+   
+
+const lion = new Animal("cat","carnivore")
+lion.sayHi() 
+   
+const pigeon = new Bird()
+pigeon.sayBye()
+pigeon.sayHi()
+</script>

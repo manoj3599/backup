@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation Example</title>
+</head>
+<body>
+    <ul id="parent-list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <script>
+        // Get the parent element
+        const parentList = document.getElementById('parent-list');
+
+        // Attach a single event listener to the parent element
+        parentList.addEventListener('click', function(event) {
+            // Check if the clicked element is a list item
+            if (event.target && event.target.nodeName === 'LI') {
+                console.log('List item', event.target.innerText, 'was clicked.');
+            }
+        });
+
+        // Dynamically add a new list item
+        const newItem = document.createElement('li');
+        newItem.textContent = 'Item 4';
+        parentList.appendChild(newItem);
+    </script>
+</body>
+</html>

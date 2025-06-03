@@ -1,0 +1,15 @@
+<script>
+   window.addEventListener('keydown', function(event) {
+    // Convert keyCode to charCode
+    const charCode = event.keyCode;
+    
+    // Convert charCode to character
+    const char = String.fromCharCode(charCode);
+    
+    if (char === 'E' || char === 'e') { // Check for both 'E' and 'e'
+        console.log(char);
+        console.log(charCode);
+    }
+});
+
+</script>

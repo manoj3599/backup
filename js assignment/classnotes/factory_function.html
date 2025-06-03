@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function factory(name, role) {
+            return {
+                name : name,
+                role : role
+            }
+        }
+        console.log(factory("manoj","instructor"));
+
+
+        class Student {
+            constructor(naming,roling){
+                this.name= naming;
+                this.y = roling
+            }
+        }
+        console.log(new Student("vinay", "guitarist"))
+        // ne object will be created as soon as you create new instance 
+        //which will be filled by constructor
+    </script>
+</body>
+</html>

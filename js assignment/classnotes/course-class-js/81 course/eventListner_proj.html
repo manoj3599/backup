@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="conatiner">
+        Welcome to JavaScript
+    </div>
+    <div id="sub">
+        Welcome to Html
+    </div>
+    <script>
+        window.addEventListener('click',function(event){
+            console.log(event.target)
+            if(document.querySelector("#conatiner").contains(event.target)){
+               console.log("yes")
+            }
+        })
+    </script>
+</body>
+</html>

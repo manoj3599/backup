@@ -1,0 +1,24 @@
+<script>
+    let promise =new Promise(function(res,rej){
+        res(1)
+    })
+
+    promise.then(function(result){
+        console.log(result)
+        return result+1
+    }).finally(function(){
+        console.log("yehooo")
+        return 4//but ignored silently
+    }).then(function(result){
+        console.log(result)
+        throw result+1
+    }).then(function(result){
+        console.log(result)
+        return  result+1
+    }).then(function(result){
+        console.log(result)
+        return result+1
+    }).catch(function(err){
+        console.log(err)
+    })
+</script>

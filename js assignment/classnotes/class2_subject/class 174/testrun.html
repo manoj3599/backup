@@ -1,0 +1,19 @@
+<script>
+    //const person = { name: 'John', age: 30, address: { city: 'New York', state: 'NY', zip: '10001' } }; 
+    //const { name, age, address: { city } } = person; 
+    //console.log(name, age, city);
+
+    const person = {
+  name: 'John',
+  age: 30
+};
+
+Object.defineProperty(person, 'name', {
+  writable: false
+});
+
+person.name = 'Mike';
+
+console.log(person.name);
+
+</script>

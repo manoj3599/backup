@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    .outer {
+        height: 400px;
+        width: 400px;
+        background-color: red;  
+    }
+    .inner {
+        height: 200px;
+        width: 200px;
+        background-color: blue;
+    }
+</style>
+</head>
+<body>
+    <div class="outer" id="outer">
+        Welcome to HTML
+        <div class="inner" id="inner">
+            Welcome to CSS
+        </div>
+    </div>
+
+<script>
+    // Event handler for the outer div
+    function outerHandler() {
+        alert("outerHandler");
+    }
+
+    // Event handler for the inner div
+    function innerHandler(event) {
+        alert("innerHandler");
+        // Uncomment the following line to stop event propagation
+        // event.stopPropagation();
+    }
+
+    // Attach event listeners using capturing phase
+    document.getElementById('outer').addEventListener('click', outerHandler, true);
+    document.getElementById('inner').addEventListener('click', innerHandler, true);
+</script>
+</body>
+</html>

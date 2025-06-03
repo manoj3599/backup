@@ -1,0 +1,13 @@
+<script>
+    const arr = [1, 2, 3, 4];
+
+    Array.prototype.max = function() {
+        const arr = [...this];
+        const max = arr.reduce(function(maxValue, currentValue) {
+            return currentValue > maxValue ? currentValue : maxValue;
+        }, 0);
+        return max;
+    };
+
+    console.log(arr.max());
+</script>

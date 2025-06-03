@@ -1,0 +1,17 @@
+<script>
+    class User {
+        constructor(name) {
+            this.name = name
+        }
+
+    }
+
+    const sayHiMixim = {
+      say : function() {
+        console.log(this.name)
+      }
+    }
+    User.prototype.say = sayHiMixim.say
+    const ui = new User("Bhaves")
+    ui.say()
+</script>

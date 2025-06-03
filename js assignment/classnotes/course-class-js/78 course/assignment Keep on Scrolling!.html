@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.images {
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.images:hover {
+  transform: scale(1.05);
+}
+    </style>
+</head>
+<body>
+    <div class="container" id="imageContainer">
+  
+    </div>
+    <script>
+       const API_URL = "https://content.newtonschool.co/v1/pr/65f821a4f6a42e24cda7e50c/productsData";
+
+const imageConatiner = document.querySelector('#imageContainer')
+
+async function initial(){
+    try{
+        const response = await fetch(API_URL);
+        const data = await response.json();
+        data.forEach(element=>{
+            const image = document.createElement('img');//<img>
+            image.setAttribute("class","images");//<img class="images" >
+            image.src = element.image;//<img class="images" src="https://d3dyfaf3iutrxo.cloudfront.net/general/upload/2b9d207fd6014d67aeb430b1efa3dae6.jpg">
+            imageConatiner.appendChild(image)
+        })
+    }catch(err){
+
+    }
+}
+
+initial()
+
+window.addEventListener('scroll',()=>{
+            if((window.innerHeight+window.scrollY)>=document.documentElement.scrollHeight){
+                initial();
+            }
+            
+         })
+    </script>
+</body>
+</html>

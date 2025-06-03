@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Student {
+            constructor(name) {
+                this.name = name; // Initialize private property with the provided name
+            }
+
+            // Getter method
+            get s() {
+                return this.name;
+            }
+
+            // Setter method for 's'
+            set s(newName) {
+                console.log(`Setting name to: ${newName}`);
+                this.name = newName;
+            }
+        }
+
+        const student1 = new Student("akash");
+
+        // Using setter method 's' (not 'name')
+        student1.s = 'Alice'; // This will trigger the setter for 's'
+
+        // Using getter method 's' (not 'name')
+        console.log(student1.s); // Accessing the getter for 's'
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<script>
+
+/*function p1(){
+return new Promise(function(res,rej){
+       console.log("created promise 1")
+            res("iam promise 1")
+       
+    })
+}
+
+
+    function p2(){
+   return new Promise(function(res,rej){
+       
+        console.log("created promise 2")
+        res("iam promise 2")
+        
+    }) 
+}
+
+    
+
+const combined_Promise = Promise.all([p1(),p2()])
+combined_Promise.then(function(result){
+    console.log("both Promise executed", "combined promise")
+}).catch(function(err){
+    console.log("atleast 1 promise rejected")
+})*/
+
+
+    const p1 = new Promise(function(res,rej){
+        setTimeout(function(){
+            res("2sec")
+        },2000)
+    })
+
+    const p2 = new Promise(function(res,rej){
+        setTimeout(function(){
+            rej("3sec")
+        },2000)
+    })
+
+    const combined_Promise = Promise.all([p1,p2])
+combined_Promise.then(function(result){
+    console.log("both Promise executed", "combined promise")
+}).catch(function(err){
+    console.log("atleast 1 promise rejected")
+})
+</script>

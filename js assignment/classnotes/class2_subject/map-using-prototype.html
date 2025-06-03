@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        Array.prototype.map = function() {//1
+            console.log("yes did it ")
+        }
+
+        const arr = new Array()//linled with 1 anmd 2
+        arr.map()
+
+        //or if 
+
+        Array.prototype.sum = function() {//2
+            console.log("sum up ")
+        }
+
+        
+        arr.sum()
+
+
+    </script>
+</body>
+</html>

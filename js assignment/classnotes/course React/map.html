@@ -1,0 +1,37 @@
+<script>
+    let employees = [
+        {
+            id:1,
+            name:"manoj",
+            email:"manoj@gmail.com",
+            status :true
+
+        },{
+            id:2,
+            name:"xyz",
+            email:"xyzj@gmail.com",
+            status :true
+
+        },{
+            id:1,
+            name:"bbc",
+            email:"bbc@gmail.com",
+            status :true
+
+        },{
+            id:1,
+            name:"yuxa",
+            email:"yuxa@gmail.com",
+            status :true
+
+        }
+    ]
+
+    let result = employees.map((input)=>{
+        return{
+            name: input['name'],
+            status: input['status']
+        }
+    })
+    console.log(result)
+</script>

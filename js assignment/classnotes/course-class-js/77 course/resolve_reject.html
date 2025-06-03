@@ -1,0 +1,17 @@
+<script>
+    function display(n){
+        return new Promise((resolve,reject)=>{
+            if(n>0){
+                resolve(true)
+                
+            }else{
+                reject("number is below zero")
+            }
+        })
+    }
+    display(-3).then((result)=>{
+        console.log(`yes it is true`)
+    },(err)=>{
+   console.log(err)
+    })
+</script>

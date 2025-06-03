@@ -1,0 +1,89 @@
+<!--<script>
+
+
+var employee ={
+    fullName : "akash",
+    age: 34,
+    list: [2,3,5,6],
+    getDisplay: function(){
+
+    }
+}
+</script>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo" class="list" name = "heading">
+        Welcome to html
+    </div>
+    
+</body>
+<script>
+    
+    var list = document.getElementById("demo");
+    console.log(list);
+    console.log(list.getAttribute('name'));
+    console.log(list.getAttribute('class'));
+    list.setAttribute('name','subheading');
+    console.log(list.textContent);
+    console.log(list.innerText);
+    console.log(list.innerHTML);
+    list.innerHTML = "Hello";
+    console.log(list.innerHTML);
+
+
+
+    //styling
+    list.style.color ="red" ; //to set color
+    list.style.margin ="40px";
+    list.style.fontSize ="40px";
+    list.style.backgroundColor ='yellow';
+    list.style.textAlign = "center";
+    console.log(list.style);
+
+</script>
+
+
+
+
+
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .list{
+            background-color: red;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="emo"  name = "heading">
+        Welcome to html
+    </div>
+    <script>
+    var list = document.getElementById("emo");
+            list.setAttribute('class', 'list');
+            console.log(list);
+
+</script>
+</body>
+
+</html>
+
+    

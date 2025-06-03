@@ -1,0 +1,24 @@
+<script>
+    class Accont {
+
+        static totalBalance = 0; 
+        constructor(name,age){
+            this.name = name;
+            this.age = age
+        }
+        deposit(ammount){
+            console.log(ammount)
+        }
+        static balance(){
+            console.log("this is balance")
+        }
+    }
+    let akashObj = new Accont("akash",33);
+    console.log(akashObj)
+    akashObj.deposit(100)
+    //akashObj.balance() instead
+
+    Accont.balance()//can call directly
+    Accont.totalBalance;//static key will not make you to craete instance of object 
+    //static method with varable will class name only we can access it
+</script>

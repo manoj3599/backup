@@ -1,0 +1,20 @@
+<script>
+    const promise = new Promise(function(res, rej) {
+        // Executor function: will be executed immediately when the Promise is created
+        setTimeout(() => {
+            // Reject the promise with "someError" after 5 seconds
+            rej("someError");
+        }, 5000);
+    });
+
+    promise.then(
+        function(result) {
+            // This function is called if the promise is resolved
+            console.log(result);
+        },
+        function(error) {
+            // This function is called if the promise is rejected
+            console.log(error); // Output: "someError"
+        }
+    );
+</script>

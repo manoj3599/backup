@@ -1,0 +1,17 @@
+<script>
+    function callApi1(){
+        return new Promise(function(res,rej){
+res()
+        })
+    }
+console.log(callApi1())
+
+    async function callApi2(){
+        /*return new Promise(function(res,rej){
+            res*/
+            return("helllo world") /*==res("helllo world")*/
+            throw ("error") /*=rej("error")*/
+    }
+
+    console.log(callApi2())
+</script>

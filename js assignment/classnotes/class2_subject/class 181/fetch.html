@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const req = fetch('https://mocki.io/v1/7b03132e-9477-4708-9543-7d294b652c37/pub')
+        //console.log(req)
+        req.then(function(){
+            console.log(req)
+            console.log('response agaya')
+        },function(){
+            console.log(req)
+            console.log('responce nahi aya')
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class robot{
+            constructor(name,phase){
+                this.name =name;
+                
+                this.skyphase = function(){
+                console.log(phase)
+            }
+            }
+            species= "robot";
+            transform = function() {
+                console.log("Optimus Prime")
+            }
+            
+
+        }
+        const robot1 = new robot("tito","I can cook");
+        const robot2 = new robot("terminator","abrakadbra");
+        robot1.skyphase();
+        robot1.transform();
+        robot2.skyphase();
+        robot2.transform();
+
+        console.log(robot1,robot2)
+    </script>
+</body>
+</html>

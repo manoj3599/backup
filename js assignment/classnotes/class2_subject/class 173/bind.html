@@ -1,0 +1,20 @@
+<script>
+    function Car(type, fuelType ){
+      this.type = type
+      this.fuelType = fuelType
+  }
+  const obj1 = {}
+  const obj2 = {}
+  const obj3 = {}
+  
+  //Car.bind(obj3, "covertible", "petrol")()
+
+  //or 
+
+  const newCarFunction = Car.bind(obj3, "covertible", "petrol")//creates a copy of car function 
+
+  newCarFunction()
+  
+  console.log(obj3)  
+  </script>
+  

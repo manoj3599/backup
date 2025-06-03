@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .correct{
+            color: rgb(128, 64, 0);
+        }
+
+        .incorrect{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="quoteDisplayElement"></div>
+    <script>
+        let quoteDisplayElement = document.querySelector('#quoteDisplayElement')
+        let quote = "welcome to javacript"
+        quote.split("").forEach(function(char){
+            //console.log(char)
+            let charSpan = document.createElement("span");
+            charSpan.innerText = char
+            quoteDisplayElement.appendChild(charSpan)
+
+        })
+
+        //to check condition 
+
+       /*if(quote[0] == "w"){
+            quoteDisplayElement.childNodes[0].classList.add("correct")
+        }*/
+
+//for particular
+        /*quoteDisplayElement.childNodes[3].classList.add("correct")*/
+  
+        for(let i=0;i<quote.length;i++){
+            quoteDisplayElement.childNodes[i].classList.add("correct")
+        }
+
+
+    </script>
+</body>
+</html>

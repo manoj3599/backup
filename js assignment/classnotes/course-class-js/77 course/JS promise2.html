@@ -1,0 +1,22 @@
+<script>
+    
+function checkCanIVote(time,age) {
+
+return new Promise((resolve,reject)=>{
+setTimeout(()=>{
+   if(age>=18){
+       resolve("You can vote")
+   }else{
+       reject("You can not vote")
+   }
+},time)
+})
+
+}
+
+checkCanIVote(5000,7).then((result)=>{
+ console.log(result)
+}).catch((error) => {
+     console.log(error);
+ });
+</script>

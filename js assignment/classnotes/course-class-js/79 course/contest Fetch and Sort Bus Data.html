@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+    h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#data-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.description {
+    margin-top: 5px;
+}
+   </style>
+</head>
+<body>
+    <head>
+		<title>Json Data</title>
+	</head>
+	<body>
+		<h1>Json Data</h1>
+		<div id="data-container"></div>
+	<script>
+        const url = "https://content.newtonschool.co/v1/pr/63b70222af4f30335b4b3b9a/buses";
+
+        async function initial(){
+            let response = await fetch(url)
+            let data = await response.json();
+            console.log(data)
+
+            let resultSort = data.sort((a,b)=>{
+                return a.ticketPrice - b.ticketPrice
+            })
+            let parent = document.querySelector("#data-container")
+            resultSort.forEach((input)=>{
+                let finalResult =JSON.stringify(input)
+                let element = document.createElement('div')
+                element.setAttribute("class","description");//or
+                //element.classList.add("description")
+                element.textContent = finalResult
+                parent.appendChild(element)
+            })
+        }
+        initial()
+    </script>
+</body>
+</html>

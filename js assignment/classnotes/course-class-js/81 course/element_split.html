@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="quoteDisplayElement">
+
+    </div>
+    <script>
+        let quoteDisplayElement = document.querySelector('#quoteDisplayElement')
+        let quote = "welcome to javacript"
+        quote.split("").forEach(function(char){
+            console.log(char)
+            let charSpan = document.createElement("span");
+            charSpan.innerText = char
+            quoteDisplayElement.appendChild(charSpan)
+
+        })
+    </script>
+</body>
+</html>

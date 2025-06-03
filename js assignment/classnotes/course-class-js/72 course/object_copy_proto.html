@@ -1,0 +1,19 @@
+<html>
+    
+</html>
+<script>
+    let ObjectOne = {
+        fullName : "akaksh",
+        age:33
+    }
+
+    let ObjectTwo = Object.create(ObjectOne);//inheritance
+    ObjectTwo.adress = "banglore"
+    console.log(ObjectTwo.age)
+    ObjectTwo.age =67;
+    ObjectTwo.__proto__.age = 56;
+    console.log(ObjectTwo)
+    console.log(ObjectTwo.__proto__);//refer to objectTwo 
+    console.log(ObjectTwo.__proto__.__proto__);//refer to objectOne
+    console.log(ObjectTwo.__proto__.__proto__.__proto__);//refer to null
+</script>

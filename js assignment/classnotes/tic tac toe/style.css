@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    background-color: pink;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 50px;
+}
+
+.upper { /*body*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.row { /*box*/
+    border: 1px solid black;
+    height: 200px;
+    width: 200px;
+    background-color: darkblue;
+    margin-bottom: 1px; /* Add margin-bottom */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
+   
+}
+.row #player1Mark {
+    background-color: inherit;
+    color: black;
+}
+
+.row #player2Mark {
+    background-color: inherit;
+    color: black;
+}
+
+/* Remove margin-bottom from the last row */
+/*.row:last-child {
+    margin-bottom: 0;
+}*/
+
+#contain { /*container*/
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    /*margin: 0 25px 25px 0;*/
+}

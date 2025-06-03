@@ -1,0 +1,65 @@
+<script>
+    import React, { useEffect } from 'react';
+import '../styles/App.css';
+
+const App = () => {
+  const [question, setQuestion] = React.useState('');
+  const [correctAnswer, setCorrectAnswer] = React.useState('');
+  const [userAnswer, setUserAnswer] = React.useState('');
+  const [result, setResult] = React.useState('');
+
+  useEffect(() => {
+    // Fetch initial question when the component mounts
+    fetchQuestion();
+  }, []);
+
+  const fetchQuestion = () => {
+    // Fetch a random trivia question from the provided API
+    fetch('https://opentdb.com/api.php?amount=1')
+      .then(response => response.json())
+      .then(data => {
+        // Check if the API response contains a question
+        if (data.results && data.results.length > 0) {
+          const newQuestion = data.results[0].question;
+          const newCorrectAnswer = data.results[0].correct_answer;
+          setQuestion(newQuestion);
+          setCorrectAnswer(newCorrectAnswer);
+          setResult('');
+        } else {
+          // If the API response doesn't contain a question, fetch again
+          fetchQuestion();
+        }
+      })
+      .catch(error => console.error('Error fetching question:', error));
+  };
+
+  const handleAnswerSubmit = () => {
+    if (userAnswer.trim().toLowerCase() === correctAnswer.trim().toLowerCase()) {
+      setResult('Correct!');
+    } else {
+      setResult(Incorrect. The correct answer is: ${correctAnswer});
+    }
+
+    // Reset the input field and fetch a new question
+    setUserAnswer('');
+    fetchQuestion();
+  };
+
+  return (
+    <div id='main'>
+      <h1 className='title'>Trivia Game</h1>
+      <p className='question-para'>Question: {question}</p>
+      <input
+        className='answer-input-field'
+        type='text'
+        value={userAnswer}
+        onChange={(e) => setUserAnswer(e.target.value)}
+      />
+      <button className='submit-btn' onClick={handleAnswerSubmit}>Submit</button>
+      <p className='result-para'>{result}</p>
+    </div>
+  );
+};
+
+export default App;
+</script>

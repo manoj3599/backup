@@ -1,0 +1,15 @@
+<script>
+    const obj = {}
+//obj.name ="kiran"//this makes it true
+
+Object.defineProperty(obj,"name",{
+value:"BHAVESH",
+writable: true,//IF TRUE ONLY  obj.name = "mustafa" WILL WORK AND IF INTIALLY ITS FALSE THEN IT CANNOT CHANGE FOR ANYTHING
+enumerable: false,
+
+})
+console.log(Object.getOwnPropertyDescriptor(obj,"name"))//al reamins false 
+
+obj.name = "mustafa"//if writable: true, then value will become mustafa or else its still the same as BHAVESH
+console.log(obj)
+</script>

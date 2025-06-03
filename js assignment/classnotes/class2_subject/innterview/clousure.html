@@ -1,0 +1,15 @@
+<script>
+    function outerFunction() {
+  let outerVariable = "I am outside!";
+  
+  function innerFunction() {
+    console.log(outerVariable); // Accesses outerVariable from the outer function
+  }
+  
+  return innerFunction;
+}
+
+const closureFunction = outerFunction();
+closureFunction(); // Outputs: "I am outside!"
+
+</script>

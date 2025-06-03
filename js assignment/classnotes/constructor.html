@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Student{
+            constructor(Name, x){
+                this.fullName = Name;//this referes to the class Student and this.fullName = Name; and constructor(Name, x) should be same 
+                this.age = x;
+            }
+            getAgeDetails() {
+                console.log("My current age is",this.age);
+            }
+        }
+        const akashObj = new Student("akash",33);
+       console.log(akashObj);
+       akashObj.getAgeDetails();
+      
+        const macObj = new Student("mac",44); 
+        macObj.getAgeDetails();
+        //console.log(macObj);
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      class Person {
+        constructor(name) {
+            this.name = name
+        }
+        
+    } 
+
+    Person.prototype.planet = "earth"
+
+
+    const p1 = new Person("manoj") 
+    const p2 = new Person("vikey") 
+    //p1.planet = "moon"
+    //p2.planet = "moon"
+    console.log(p1.planet)
+    console.log(p2.planet)
+
+    Person.prototype.planet = "moon"
+
+    console.log(p1.planet)
+    console.log(p2.planet)
+    </script>
+    
+</body>
+</html>

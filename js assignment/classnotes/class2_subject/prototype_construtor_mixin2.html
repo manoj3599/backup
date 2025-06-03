@@ -1,0 +1,23 @@
+<script>
+    class User {
+        constructor(name) {
+            this.name = name
+        }
+
+    }
+
+    const sayMixim = {
+      xyz : function(name) {
+        console.log(name)
+      }
+    }
+
+    const sayHiMixim = {
+      say : function() {
+        sayMixim.xyz(this.name)
+      }
+    }
+    User.prototype.say = sayHiMixim.say
+    const ui = new User("Bhavesh")
+    ui.say()
+</script>

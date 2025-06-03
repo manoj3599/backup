@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Team Name</th>
+            <th>Matches</th>
+            <th>Points</th>
+        </tr>
+    </table>
+    <script>
+    function initial(){
+        fetch("https://my-json-server.typicode.com/FreSauce/json-ipl/data").then((response)=>{
+            return response.json();
+        }).then((data)=>{
+            console.log(data)
+            let table = document.querySelector("table")
+            data.forEach((input)=>{
+                //console.log(input);
+                let tr = document.createElement('tr');
+
+                let tdOne = document.createElement('td');
+                tdOne.textContent = input['Team']
+                tr.appendChild(tdOne);
+
+                let tdTwo = document.createElement('td');
+                tdTwo.textContent = input['Matches']
+                tr.appendChild(tdTwo);
+
+                let tdThree = document.createElement('td');
+                tdThree.textContent = input['Points']
+                tr.appendChild(tdThree);
+
+
+                table.appendChild(tr)
+            })
+        })
+    }
+    initial();
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Vehicle {
+            constructor(speed) {
+                this.speed = speed;
+            }
+        }
+
+        class Car extends Vehicle {
+            constructor(speed) {
+                super(speed);
+            }
+            honk() {
+                console.log("car hONKING");
+            }
+        }
+
+        class Van extends Vehicle {
+            constructor(speed) {
+                super(speed);
+            }
+            seat() {
+                console.log("12 seats");
+            }
+        }
+
+        const bmwObj = new Car(240);
+        console.log(bmwObj);
+        bmwObj.honk();
+        
+        const vanObj = new Van(100); // Changed variable name to vanObj
+        console.log(vanObj);
+       vanObj.seat();
+
+    </script>
+</body>
+</html>

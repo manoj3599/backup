@@ -1,0 +1,28 @@
+<script>
+class Account {
+    static account=0;
+    static totalBalance = 0;
+
+
+
+   constructor(accountNum, balance) {
+       this.accountNum = accountNum
+       this.balance = balance
+       Account.account += 1
+       Account.totalBalance += balance;
+    }
+    static returnTotalAccounts(){
+        return Account.account
+    }
+    static returnTotalBalance(){
+        return Account.totalBalance
+    }
+}
+
+
+//example 
+
+let akashObj = new Account(2565,100)
+let sureshObj = new Account(2565,100)
+let vinodObj = new Account(2565,100)
+</script>

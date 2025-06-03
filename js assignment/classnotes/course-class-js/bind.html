@@ -1,0 +1,18 @@
+<script>
+    let obj = {
+        firstName: "akash",
+        age: 22,
+        getFullName: function(lastName) {//2
+            console.log(this.firstName,this.age,lastName);//3 takes last name
+        }
+        
+    };
+    
+    obj.getFullName("ramesh")//1
+
+    let Person = {
+        firstName:'suresh',
+        age:33
+    }
+    obj.getFullName.bind(Person,"mukesh")();
+</script>

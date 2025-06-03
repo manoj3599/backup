@@ -1,0 +1,12 @@
+<script>
+    const obj = {
+        name:"bhavesh",
+        role: "Instructor"
+    }
+
+    function test() {
+        console.log(this)
+    }
+
+    test.bind(obj)()//by using bind inside console.log we have all the properties of obj or else this will be pointing to obj
+</script>

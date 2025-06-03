@@ -1,0 +1,12 @@
+<script>
+    let objectOne = {
+        fullName : "akash",
+        age : 56
+    }
+    //deep copy
+
+    let objectTwo = Object.assign({},objectOne);//if objectOne = objectTwo it will give same O/p to avoid use Object.assign so that both objects are different 
+    console.log(objectOne)
+    objectTwo.fullName ="manoj"
+    console.log(objectTwo)
+</script>
